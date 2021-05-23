@@ -1,7 +1,7 @@
 <template>
   <nav>
     <v-navigation-drawer :style="{background:$vuetify.theme.themes.light.admin}" :mini-variant.sync="drawer" permanent
-      app  dark width="230" v-model="drawer">
+      app  dark width="210" v-model="drawer">
       <!-- logo + 标题 -->
 
       <!-- <v-list-item class="px-2">
@@ -14,22 +14,24 @@
 
       <v-list shaped>
         <template v-for="item in items">
-          <v-list-group v-model="item.model" v-if="item.children" :key="item.text" 
+          <v-list-group  v-model="item.model" v-if="item.children" :key="item.text" 
 
             :append-icon="item['icon-alt']" no-action>
             <!-- :prepend-icon="item.icon" -->
             <template v-slot:prependIcon>
-              <v-icon small v-text="item.icon" class="pa-0"></v-icon>
+
+                <v-icon small v-text="item.icon"></v-icon>
+              <!-- <v-icon small v-text="item.icon" class="me-3"></v-icon> -->
             </template>
 
 
             <template v-slot:activator>
-              <v-list-item-content>
+              <v-list-item-content class="ml-n4">
                 <v-list-item-title class="text-button"  v-text="item.text"></v-list-item-title>
               </v-list-item-content>
             </template>
 
-            <v-list-item v-for="child in item.children" :key="child.text" :to="child.route">
+            <v-list-item class="ml-n6" v-for="child in item.children" :key="child.text" :to="child.route">
               <v-list-item-content>
                 <v-list-item-title class="text-button" v-text="child.text"></v-list-item-title>
               </v-list-item-content>
@@ -37,7 +39,7 @@
           </v-list-group>
 
           <v-list-item v-else :key="item.text" :to="item.route" active-class="blue--text">
-            <v-list-item-icon>
+            <v-list-item-icon class="me-4">
               <v-icon small v-text="item.icon"></v-icon>
             </v-list-item-icon>
             <v-list-item-title class="text-button" >{{ item.text }}</v-list-item-title>
