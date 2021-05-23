@@ -39,10 +39,10 @@
           </v-list-group>
 
           <v-list-item v-else :key="item.text" :to="item.route" active-class="blue--text">
-            <v-list-item-icon class="me-4">
+            <v-list-item-icon >
               <v-icon small v-text="item.icon"></v-icon>
             </v-list-item-icon>
-            <v-list-item-title class="text-button" >{{ item.text }}</v-list-item-title>
+            <v-list-item-title class="text-button ml-n4" >{{ item.text }}</v-list-item-title>
           </v-list-item>
         </template>
       </v-list>
@@ -57,8 +57,7 @@
 
 
 
-      <v-app-bar-title class="black--text text-body-2
-      ">
+      <v-app-bar-title class="black--text text-body-2">
         <span>后台管理系统</span>
       </v-app-bar-title>
 
