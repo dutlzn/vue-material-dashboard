@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+
 .main {
     margin: 10px 10px 0 10px;
     background-color:#eee;
@@ -17,7 +18,6 @@
     height: 4px;
 }
 
-/* 高度 宽度 充满 */
 .height-100pc {
     height:100% !important;
 }
