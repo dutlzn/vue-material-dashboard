@@ -99,7 +99,10 @@
               <v-chip-group v-model="activeIndex" active-class="primary--text">
                 <v-chip
                   label
-                  outlined
+                  outlined 
+                  close
+                  close-icon="mdi-close"
+                  @click:close="close(item)"
                   @click="active(item)"
                   v-for="item in visitedItem"
                   :key="item.id"
@@ -119,7 +122,9 @@
 <script>
 export default {
   methods: {
-    // 激活chip
+    close(item) {
+      alert('关闭' + item.text);
+    },
     active(item) {
       let _this = this;
       _this.activeIndex = item.id;
