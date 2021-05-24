@@ -96,7 +96,7 @@
         <v-row>
           <v-col>
             <v-sheet class="width-100pc">
-              <v-chip-group v-model="activeIndex" active-class="primary--text">
+              <v-chip-group v-model="activeIndex" active-class="chip-active">
                 <v-chip
                   label
                   outlined 
@@ -106,6 +106,7 @@
                   @click="active(item)"
                   v-for="item in visitedItem"
                   :key="item.id"
+                  class="chip"
                 >
                   {{ item.text }}
                 </v-chip>
@@ -169,6 +170,14 @@ export default {
 <style>
 .v-toolbar__content {
   border-bottom: 1px solid #eee;
+}
+
+.chip:hover {
+  border-bottom: 2px solid blue !important;
+}
+.chip-active {
+  border-bottom: 2px solid blue !important;
+  color: blue!important;
 }
 </style>
 
