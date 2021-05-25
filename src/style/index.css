@@ -6,14 +6,14 @@
 }
 
 .main {
-    margin: 10px 10px 0 10px;
+    margin: 10px 5px 0 10px;
     background-color:#eee;
 }
 
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
     width: 4px;
-    background-color: #f1f1f1;
+    background-color: #fcf9f9;
     border-radius: 0.6px;
     height: 4px;
 }

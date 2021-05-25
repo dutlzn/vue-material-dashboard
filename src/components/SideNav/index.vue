@@ -19,7 +19,7 @@
         <v-list-item-title class="headline"> 后台管理系统 </v-list-item-title>
       </v-list-item> -->
 
-      <v-list shaped>
+      <v-list>
         <template v-for="item in items">
           <v-list-group
             v-model="item.model"
@@ -28,10 +28,8 @@
             :append-icon="item['icon-alt']"
             no-action
           >
-            <!-- :prepend-icon="item.icon" -->
             <template v-slot:prependIcon>
               <v-icon small v-text="item.icon"></v-icon>
-              <!-- <v-icon small v-text="item.icon" class="me-3"></v-icon> -->
             </template>
 
             <template v-slot:activator>
@@ -45,6 +43,7 @@
 
             <v-list-item
               class="ml-n6"
+              :style="{ background: $vuetify.theme.themes.light.admin2 }"
               v-for="child in item.children"
               :key="child.text"
               :to="child.route"
@@ -82,10 +81,7 @@
         <v-icon>mdi-menu-open </v-icon>
       </v-btn>
 
-      <v-app-bar-title class="text-body-2">
-        后台管理系统
-      </v-app-bar-title>
-
+      <v-app-bar-title class="text-body-2"> 后台管理系统 </v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -102,9 +98,9 @@
 
 
 <script>
-import ChipBar from '@/components/ChipBar'
+import ChipBar from "@/components/ChipBar";
 export default {
-  components:{ChipBar},
+  components: { ChipBar },
 
   data() {
     return {
@@ -113,27 +109,21 @@ export default {
         { icon: "mdi-home", text: "主页", route: "/home" },
         {
           "icon-alt": "mdi-chevron-down",
-          "icon-change": "mdi-chevron-up",
           icon: "settings",
           text: "系统设置",
           model: false,
           children: [
-            { icon: "mdi-account-circle ", text: "用户设置", route: "/" },
-            { icon: "mdi-account-group ", text: "角色设置", route: "/" },
+            {
+              icon: "mdi-account-circle ",
+              text: "用户设置",
+              route: "/system/user",
+            },
+            {
+              icon: "mdi-account-group ",
+              text: "角色设置",
+              route: "/system/role",
+            },
           ],
-        },
-      ],
-      activeIndex: 0,
-      visitedItem: [
-        {
-          id: 0,
-          text: "首页",
-          active: false,
-        },
-        {
-          id: 1,
-          text: "仪表盘",
-          active: false,
         },
       ],
     };
@@ -146,13 +136,8 @@ export default {
 .v-toolbar__content {
   border-bottom: 1px solid #eee;
 }
-
-.chip:hover {
-  border-bottom: 2px solid blue !important;
-}
-.chip-active {
-  border-bottom: 2px solid blue !important;
-  color: blue!important;
+.child-list-item {
+  background: #1f2d3d;
 }
 </style>
 

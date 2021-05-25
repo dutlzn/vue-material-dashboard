@@ -12,7 +12,8 @@ export default new Vuetify({
     theme: {
         themes: {
             light: {
-                admin: "#304156"
+                admin: "#304156",
+                admin2: "#1f2d3d"
             }
         }
     }
